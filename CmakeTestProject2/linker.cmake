@@ -1,14 +1,14 @@
-function(linker _target _obj _direction)
+function(linker _target _obj_name _direction)
 
 target_include_directories(
     ${_target} PUBLIC
-    "${_direction}/${_obj}"
+    "${_direction}"
 )
 
-if (NOT TARGET ${_obj})
-    add_subdirectory(${_direction}/${_obj} ${CMAKE_BINARY_DIR}/${_obj})
+if (NOT TARGET ${_obj_name})
+    add_subdirectory(${_direction} ${CMAKE_BINARY_DIR}/${_obj_name})
 endif()
 
-target_link_libraries(${_target} PUBLIC ${_obj})
+target_link_libraries(${_target} PUBLIC ${_obj_name})
 
 endfunction()

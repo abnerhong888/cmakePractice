@@ -16,23 +16,25 @@ project(${PROJECTNAME})
 
 add_executable(${PROJECTNAME})
 
-target_include_directories( ${PROJECTNAME} 
-                            PUBLIC ${INC_DIR} 
-                            PUBLIC ${COMMON_DIR}
+target_include_directories( 
+    ${PROJECTNAME} 
+    PUBLIC ${INC_DIR} 
+    PUBLIC ${COMMON_DIR}
 )
 
-target_sources( ${PROJECTNAME} 
-                PUBLIC ${SRCS}
+target_sources( 
+    ${PROJECTNAME} 
+    PUBLIC ${SRCS}
 )
 
 include(../global.cmake)
 
 include(${LINKER_DIR})
-linker(${PROJECTNAME} common_module1 ${SOLUTION_DIR}/common)
-linker(${PROJECTNAME} common_module2 ${SOLUTION_DIR}/common)
+linker(${PROJECTNAME} common_module1 ${SOLUTION_DIR}/common/common_module1)
+linker(${PROJECTNAME} common_module2 ${SOLUTION_DIR}/common/common_module2)
 
-linker(${PROJECTNAME} test_module1 .)
-linker(${PROJECTNAME} test_module2 .)
+linker(${PROJECTNAME} test_module1 ./test_module1)
+linker(${PROJECTNAME} test_module2 ./test_module2)
 
 target_compile_definitions( ${PROJECTNAME}  PUBLIC
     # "_CRT_SECURE_NO_WARNINGS"
