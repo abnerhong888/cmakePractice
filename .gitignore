@@ -1,2 +1,3 @@
-CmakeTestProject/build/
-CmakeTestProject/.cache/
+.vscode/
+build/
+.cache/
