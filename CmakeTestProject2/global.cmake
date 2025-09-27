@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 11 CACHE STRING "C++ standard to be used" FORCE)
 set(CMAKE_CXX_EXTENSIONS ON CACHE BOOL "c++ extensions to be used" FORCE)
 set(CMAKE_CXX_STANDARD_REQUIRED ON CACHE BOOL "c++ standard required" FORCE)
 set(CMAKE_CXX_FLAGS "-g -Wall" CACHE STRING "c++ flags" FORCE)
+set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "build type" FORCE)
 
 #set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON CACHE BOOL "windows export all symbols to be used" FORCE)
 
