@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
+include(../global.cmake)
+
 set(PROJECTNAME "project1")
 set(INC_DIR ".")
 set(SRC_DIR ".")
@@ -26,8 +28,6 @@ target_sources(
     ${PROJECTNAME} 
     PUBLIC ${SRCS}
 )
-
-include(../global.cmake)
 
 include(${LINKER_DIR})
 linker(${PROJECTNAME} common_module1 ${SOLUTION_DIR}/common/common_module1)
